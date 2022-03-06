@@ -29,7 +29,7 @@ SELECT first_name, last_name, email FROM customer;
 
 2. SELECT DISTINCT
 * Situation
-  - **An Australian visitor isn’t familiar with MPAA movie ratings (e.g. PG , PG-13, R, etc…) **
+  - **An Australian visitor isn’t familiar with MPAA movie ratings (e.g. PG , PG-13, R, etc…)**
   - **We want to know the types of ratings we have in our database.**
   - **What ratings do we have available?**
 * Challenge
