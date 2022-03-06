@@ -5,7 +5,7 @@
 - [x] PostgreSQL
 
 ### Dataset :
-- [x] dvdrental data from https://www.postgresqltutorial.com/, cek for more tutorial ! 
+- [x] dvdrental [data](https://www.postgresqltutorial.com/), cek for more tutorial ! 
 <kbd><img width="980" alt="image" src="https://user-images.githubusercontent.com/36781269/156906380-00966454-aefa-442e-94eb-1900dba58a43.png"></kbd>
 
 
@@ -188,5 +188,32 @@ WHERE first_name ='Nick' AND last_name = 'Wahlberg';
 
 
 ## Advanced SQL Commands
+1. Timestamps and Extract 
+* Situation
+  - **During which months did payments occur?**
+* Challenge
+  - **Format your answer to return back the full month name.**
+* Solution
+
+```sql
+SELECT 
+	DISTINCT (TO_CHAR (payment_date, 'MONTH')) 
+FROM payment;
+```
+
+2. Timestamps and Extract 
+* Situation
+  - **How many payments occurred on a Monday?**
+* Informaation 
+  - **PostgreSQL considers Sunday the start of a week (indexed at 0).**
+* Solution
+Review the [dow keyword](https://help.highbond.com/helpdocs/analytics/151/en-us/Content/analytics/scripting/functions/r_dow.htm#:~:text=YEAR(%C2%A0)-,DOW(%C2%A0)%20function,-Returns%20a%20numeric). 
+ 
+
+```sql
+SELECT COUNT(*)
+FROM payment
+	WHERE EXTRACT(dow FROM payment_date) = 1
+```
 
 
