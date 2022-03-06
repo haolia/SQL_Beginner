@@ -1,13 +1,13 @@
 # SQL_Beginner
-Business Task
-Analyse dvdrental data.
+* Business Task
+* Analyse dvdrental data.
+### Tools :
+- [x] PostgreSQL
 
-Dataset : dvdrental data from https://www.postgresqltutorial.com/, cek for more tutorial ! 
+### Dataset :
+- [x] dvdrental data from https://www.postgresqltutorial.com/, cek for more tutorial ! 
 <kbd><img width="980" alt="image" src="https://user-images.githubusercontent.com/36781269/156906380-00966454-aefa-442e-94eb-1900dba58a43.png"></kbd>
 
-
-### Tools
-- [x] PostgreSQL
 
 # Challenge 
 **Challenge Structures**
