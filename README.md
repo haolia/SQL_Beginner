@@ -139,7 +139,7 @@ SELECT FirstName, LastName
 FROM Orders2011
 ```
 
-### CREATE TABLE
+### Create Table
 ```sql
 CREATE TABLE [Table Name] ( Column1 DataType, Column2 DataType, Column3 DataType, …. )
 ```
