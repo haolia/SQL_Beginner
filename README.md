@@ -7,7 +7,7 @@
 - Top SQL DBs are MS SQL Server, Oracle, MySQL, PostgreSQL
 
 ### Database Definitions
-- **RDBMS ** (Relational Database Management System), Software that stores and manipulates data arranged in relational database tables. 
+- **RDBMS** (Relational Database Management System), Software that stores and manipulates data arranged in relational database tables. 
 - **Table** A set of data arranged in columns and rows. The columns represent characteristics of stored data and the rows represent actual data entries.
 
 ### SQL Commands Categories
