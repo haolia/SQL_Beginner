@@ -4,26 +4,36 @@
 - SQL stands for Structured Query Language 
 - SQL is pronounced “sequel” (SQL is declarative language)
 - SQL is used to access & manipulate data in databases 
-- Top SQL DBs are MS SQL Server, Oracle, DB2, and MySQL
+- Top SQL DBs are MS SQL Server, Oracle, MySQL, PostgreSQL
 
 ### Database Definitions
-- RDBMS (Relational Database Management System), Software that stores and manipulates data arranged in relational database tables. 
-- Table, A set of data arranged in columns and rows. The columns represent characteristics of stored data and the rows represent actual data entries.
+- **RDBMS ** (Relational Database Management System), Software that stores and manipulates data arranged in relational database tables. 
+- **Table** A set of data arranged in columns and rows. The columns represent characteristics of stored data and the rows represent actual data entries.
 
 ### SQL Commands Categories
 - Data Query Language (DQL) 
-	* SELECT - Retrieve data from table(s) 
+	* **SELECT** - Retrieve data from table(s) 
 - Data Manipulation Language (DML)  
-	* INSERT - Insert data into db table 
-	* UPDATE - Update data in db table 
-	* DELETE - Delete data from table Data 
+	* **INSERT** - Insert data into db table 
+	* **UPDATE** - Update data in db table 
+	* **DELETE** - Delete data from table Data 
 - Definition Language (DDL) 
-	* CREATE - Create db object (table, view, etc.) 
-	* ALTER - Modify db object (table, view, etc.)  
-	* DROP - Delete db object (table, view, etc.) 
+	* **CREATE** - Create db object (table, view, etc.) 
+	* **ALTER** - Modify db object (table, view, etc.)  
+	* **DROP** - Delete db object (table, view, etc.) 
 - Data Control Language (DCL) 
-	* GRANT - Assign privilege  
-	* REVOKE - remove privilege
+	* **GRANT** - Assign privilege  
+	* **REVOKE** - remove privilege
+
+### SQL Data Types
+- SQL have more than 40 different data types. But these seven are the most important ones:
+	* **Integer** A whole number without a fractional part. Example: 1, 156, 2012412
+	* **Decimal** A number with a fractional part. Example:. 3.14, 3.141592654, 961.1241250
+	* **Boolean** A binary value. It can be either TRUE or FALSE.
+	* **Date**  Example: 2017-12-31
+	* **Time** Example: 23:59:59
+	* **Timestamp** The date and the time together. Example: 2017-12-31 23:59:59
+	* **Text** This is the most general data type. But it can be alphabetical letters only, or a mix of letters and numbers and any other characters. Example: hello, R2D2, Haolia23, 124.765.128.412
 
 ### How to select data from a table
 ```sql
@@ -150,7 +160,7 @@ CREATE TABLE Orders ( FirstName CHAR(100), LastName CHAR(100), OrderDate DATE, O
 * Analyse dvdrental data.
 
 ### Dataset :
-- [x] dvdrental [data](https://www.postgresqltutorial.com/), cek for more tutorial ! 
+- [x] dvdrental [dvdrental.zip](https://github.com/haolia/SQL_Beginner/files/8202252/dvdrental.zip)
 <kbd><img width="980" alt="image" src="https://user-images.githubusercontent.com/36781269/156906380-00966454-aefa-442e-94eb-1900dba58a43.png"></kbd>
 
 1. SELECT 
