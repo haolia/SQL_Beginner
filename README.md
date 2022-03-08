@@ -1,4 +1,4 @@
-# 😸😸😸 SQL_Beginner 😸😸😸
+# 😸😸 SQL_Beginner 😸😸
 ## 📔 SQL Summary
 ### SQL Facts
 - SQL stands for Structured Query Language 
