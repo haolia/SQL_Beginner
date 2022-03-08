@@ -1,21 +1,158 @@
-# SQL_Beginner
-* Business Task
-* Analyse dvdrental data.
-### Tools :
-- [x] PostgreSQL
+# 😸😸😸 SQL_Beginner 😸😸😸
+## 📔 SQL Summary
+### SQL Facts
+- SQL stands for Structured Query Language 
+- SQL is pronounced “sequel” (SQL is declarative language)
+- SQL is used to access & manipulate data in databases 
+- Top SQL DBs are MS SQL Server, Oracle, DB2, and MySQL
 
-### Dataset :
-- [x] dvdrental [data](https://www.postgresqltutorial.com/), cek for more tutorial ! 
-<kbd><img width="980" alt="image" src="https://user-images.githubusercontent.com/36781269/156906380-00966454-aefa-442e-94eb-1900dba58a43.png"></kbd>
+### Database Definitions
+- RDBMS (Relational Database Management System), Software that stores and manipulates data arranged in relational database tables. 
+- Table, A set of data arranged in columns and rows. The columns represent characteristics of stored data and the rows represent actual data entries.
 
+### SQL Commands Categories
+- Data Query Language (DQL) 
+	* SELECT - Retrieve data from table(s) 
+- Data Manipulation Language (DML)  
+	* INSERT - Insert data into db table 
+	* UPDATE - Update data in db table 
+	* DELETE - Delete data from table Data 
+- Definition Language (DDL) 
+	* CREATE - Create db object (table, view, etc.) 
+	* ALTER - Modify db object (table, view, etc.)  
+	* DROP - Delete db object (table, view, etc.) 
+- Data Control Language (DCL) 
+	* GRANT - Assign privilege  
+	* REVOKE - remove privilege
 
-# Challenge 
+### How to select data from a table
+```sql
+SELECT [Column List]
+FROM [Table Name]
+WHERE [Search Condition] 
+```
+Example:
+```sql
+SELECT FirstName, LastName, OrderDate 
+FROM Orders 
+WHERE OrderDate > '10/10/2010'
+```
+
+### How to insert data in a table
+```sql
+INSERT INTO [Table Name] ([Column List]) VALUES ([Values]) 
+```
+Example:
+```sql
+INSERT INTO Orders (FirstName, LastName, OrderDate) VALUES ('John', 'Smith', '10/10/2010')
+```
+
+### How to update data in a table
+```sql
+UPDATE [Table Name] SET [Column1] = [Value1], [Column2] = [Value2], … 
+WHERE [Search Condition]
+```
+Example:
+```sql
+UPDATE Orders SET FirstName = 'John', LastName = 'Who' 
+WHERE LastName='Wo'
+```
+
+### How to delete data from a table
+```sql
+DELETE FROM [Table Name]
+WHERE [Search Condition] 
+```
+Example: 
+```sql
+DELETE FROM Orders 
+WHERE OrderDate '10/10/2010'
+```
+
+### How to group data and use aggregates
+```sql
+SELECT [Column List], [Aggregate Function]([Column Name]) 
+FROM [Table Name] 
+WHERE [Search Condition] 
+GROUP BY [Column List]
+```
+Example: 
+```sql
+SELECT LastName, SUM(OrderValue) 
+FROM Orders 
+WHERE OrderDate > '10/10/2010' 
+GROUP BY LastName
+```
+
+### How to order data
+```sql
+SELECT [Column List] 
+FROM [Table Name]
+WHERE [Search Condition] 
+ORDER BY [Column List] 
+```
+Example: 
+```sql
+SELECT FirstName, LastName, OrderDate 
+FROM Orders 
+WHERE OrderDate > '10/10/2010' 
+ORDER BY OrderDate
+```
+
+### How to select data from more than one table
+```sql
+SELECT [Column List]
+FROM [Table1] 
+JOIN [Table2] ON [Table1].[Column1] = [Table2].[Column1] 
+```
+Example: 
+```sql
+SELECT Orders.LastName, Countries.CountryName 
+FROM Orders 
+JOIN Countries ON Orders.CountryID = Countries.ID
+```
+
+### Using UNION
+```sql
+SELECT [Column List] 
+FROM [Table1]
+UNION 
+SELECT [Column List] 
+FROM [Table2] 
+```
+Example: 
+```sql
+SELECT FirstName, LastName 
+FROM Orders2010 
+UNION 
+SELECT FirstName, LastName 
+FROM Orders2011
+```
+
+### CREATE TABLE
+```sql
+CREATE TABLE [Table Name] ( Column1 DataType, Column2 DataType, Column3 DataType, …. )
+```
+Example:
+```sql
+CREATE TABLE Orders ( FirstName CHAR(100), LastName CHAR(100), OrderDate DATE, OrderValue Currency )
+```
+
+## 📔 Challenge 
 **Challenge Structures**
  - Business Situation
  - Challenge Question
  - Solution
 
-## SQL Statement Fundamentals
+### Tools :
+- [x] PostgreSQL
+* Business Task
+* Analyse dvdrental data.
+
+### Dataset :
+- [x] dvdrental [data](https://www.postgresqltutorial.com/), cek for more tutorial ! 
+<kbd><img width="980" alt="image" src="https://user-images.githubusercontent.com/36781269/156906380-00966454-aefa-442e-94eb-1900dba58a43.png"></kbd>
+
 1. SELECT 
 * Situation
   - **We want to send out a promotional email to our existing customers!**
@@ -186,9 +323,7 @@ FROM film_actor
 WHERE first_name ='Nick' AND last_name = 'Wahlberg';
 ```
 
-
-## Advanced SQL Commands
-1. Timestamps and Extract 
+14. Timestamps and Extract 
 * Situation
   - **During which months did payments occur?**
 * Challenge
@@ -201,7 +336,7 @@ SELECT
 FROM payment;
 ```
 
-2. Timestamps and Extract 
+15. Timestamps and Extract 
 * Situation
   - **How many payments occurred on a Monday?**
 * Informaation 
@@ -209,7 +344,6 @@ FROM payment;
 * Solution
 Review the [dow keyword](https://help.highbond.com/helpdocs/analytics/151/en-us/Content/analytics/scripting/functions/r_dow.htm#:~:text=YEAR(%C2%A0)-,DOW(%C2%A0)%20function,-Returns%20a%20numeric). 
  
-
 ```sql
 SELECT COUNT(*)
 FROM payment
