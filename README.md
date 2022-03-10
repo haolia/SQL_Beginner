@@ -361,13 +361,13 @@ FROM payment
 	WHERE EXTRACT(dow FROM payment_date) = 1
 ```
 
-# ✨ Contribution
+### ✨ Contribution
 
 Contributions, issues, and feature requests are welcome!
 
 To contribute to Patronify, see the GitHub documentation on **[creating a pull request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request)**.
 
-# 👏 Support
+### 👏 Support
 
 Give a ⭐️ if you like this project!
 ___________________________________
