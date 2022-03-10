@@ -161,6 +161,7 @@ CREATE TABLE Orders ( FirstName CHAR(100), LastName CHAR(100), OrderDate DATE, O
 
 ### Dataset :
 - [x] dvdrental [dvdrental.zip](https://github.com/haolia/SQL_Beginner/files/8202252/dvdrental.zip)
+- Before diving straight into solution mode for the business requirements, I need to take a look at the data with EDR (Entity-Relationship Diagrams) to identify different data relationships between tables. The EDR of these datasets can be viewed as below:
 <kbd><img width="980" alt="image" src="https://user-images.githubusercontent.com/36781269/156906380-00966454-aefa-442e-94eb-1900dba58a43.png"></kbd>
 
 #### 1. SELECT 
