@@ -177,7 +177,7 @@ LIMIT 10;
 ```
 
 | 	first_name	|	last_name	|		email			|
-| --------------------- | ---------------------	| ------------------------------------- |
+| :-------------------: | :-------------------:	| :-----------------------------------: |
 | 	Jared		|	Ely		| jared.ely@sakilacustomer.org		|
 | 	Mary		|	Smith		| mary.smith@sakilacustomer.org		|
 | 	Patricia	|	Johnson		| patricia.johnson@sakilacustomer.org	|
@@ -204,7 +204,7 @@ SELECT DISTINCT rating FROM film;
 ```
 	
 | 	rating 	     |
-| ------------------ |
+| :----------------: |
 |	R	     |
 |	NC-17        |
 |	G            |
@@ -227,7 +227,7 @@ AND last_name = 'Thomas';
 ```
 
 | 		email			|
-| ------------------------------------- |
+| :-----------------------------------: |
 |   nancy.thomas@sakilacustomer.org     |
 	
 	
@@ -245,7 +245,7 @@ WHERE title = 'Outlaw Hanky'
 ```
 
 |					description 					       |
-| -------------------------------------------------------------------------------------------- |
+| :------------------------------------------------------------------------------------------: |
 | A Thoughtful Story of a Astronaut And a Composer who must Conquer a Dog in The Sahara Desert |
 	
 
@@ -262,7 +262,7 @@ WHERE address = '259 Ipoh Drive'
 ```
 
 |     phone     |
-| -------------	|
+| :-----------:	|
 | 419009857119  |
 
 
@@ -281,7 +281,7 @@ LIMIT 10
 ```
 
 | customer_id |
-| ----------- |
+| :---------: |
 |	416   |
 |516|
 |239|
@@ -310,7 +310,7 @@ LIMIT 5
 ```
 
 | title | length |
-| --------| ---------|
+| :------: | :---------:|
 |Labyrinth League|	46|
 |Alien Center|	46|
 |Iron Moon|	46|
@@ -332,7 +332,7 @@ WHERE length <= 50
 ```
 
 | count|
-|-------|
+| :-----: |
 |  37   |
 		 
 		 
@@ -350,7 +350,7 @@ HAVING SUM(amount) >110;
 ```
 
 | customer_id | SUM |
-| ----------- |-----|
+| :---------: | :---:|
 |187|	110.81|
 |148|	110.78|
 	
@@ -367,7 +367,7 @@ WHERE title  LIKE'J%';
 ```
 
 | count |
-| ----- |
+| :---: |
 | 20	|
 	
 	
@@ -385,7 +385,7 @@ LIMIT 1;
 ```
 
 | first_name | last_name |	
-| ---------- | --------- |
+| :--------: | :-------: |
 | Eddie	| Tomlin|
 					      
 					      
@@ -404,7 +404,7 @@ WHERE district = 'California';
 ```
 					      
 | district | email |
-| -------- | ----- |
+| :------: | :---: |
 |California|	patricia.johnson@sakilacustomer.org|
 |California|	betty.white@sakilacustomer.org|
 |California|	alice.stewart@sakilacustomer.org|
@@ -433,7 +433,7 @@ WHERE first_name ='Nick' AND last_name = 'Wahlberg';
 
 					      
 |title | first_name |last_name|
-| ------ | ------- | ---------|
+| :------: | :-------: | :---------:|
 |Adaptation Holes		|Nick	|Wahlberg|
 |Apache Divine			|Nick	|Wahlberg|
 |Baby Hall			|Nick	|Wahlberg|
@@ -475,7 +475,7 @@ FROM payment;
 ```
 
 | to_char|
-| ------- |
+| :-------: |
 | MARCH   | 
 | MAY      |
 | FEBRUARY |
@@ -497,7 +497,7 @@ FROM payment
 ```
 
 | Count | 
-| ------|
+| :------:|
 |2948|
 					      
 					      
