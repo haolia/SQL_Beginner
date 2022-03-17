@@ -172,9 +172,24 @@ CREATE TABLE Orders ( FirstName CHAR(100), LastName CHAR(100), OrderDate DATE, O
 * Solution
 
 ```sql
-SELECT first_name, last_name, email FROM customer;
+SELECT first_name, last_name, email FROM customer
+LIMIT 10;
 ```
 
+| 	first_name	|	last_name	|		email			|
+| --------------------- | ---------------------	| ------------------------------------- |
+| 	Jared		|	Ely		| jared.ely@sakilacustomer.org		|
+| 	Mary		|	Smith		| mary.smith@sakilacustomer.org		|
+| 	Patricia	|	Johnson		| patricia.johnson@sakilacustomer.org	|
+| 	Linda		|	Williams	| linda.williams@sakilacustomer.org	|
+| 	Barbara		|	Jones		| barbara.jones@sakilacustomer.org	|
+| 	Elizabeth	|	Brown  	 	| elizabeth.brown@sakilacustomer.org	|
+| 	Jennifer	|	Davis		| jennifer.davis@sakilacustomer.org	|
+| 	Maria		|	Miller		| maria.miller@sakilacustomer.org	|
+| 	Susan		|	Wilson		| susan.wilson@sakilacustomer.org	|
+| 	Margaret	|	Moore		| margaret.moore@sakilacustomer.org	|	
+		
+	
 #### 2. SELECT DISTINCT
 * Situation
   - **An Australian visitor isn’t familiar with MPAA movie ratings (e.g. PG , PG-13, R, etc…)**
@@ -187,6 +202,15 @@ SELECT first_name, last_name, email FROM customer;
 ```sql
 SELECT DISTINCT rating FROM film;
 ```
+	
+| 	rating 	     |
+| ------------------ |
+|	R	     |
+|	NC-17        |
+|	G            |
+| 	PG	     |
+|	PG-13        |	
+	
 
 #### 3. SELECT WHERE
 * Situation
@@ -202,6 +226,11 @@ WHERE first_name = 'Nancy'
 AND last_name = 'Thomas';
 ```
 
+| 		email			|
+| ------------------------------------- |
+|   nancy.thomas@sakilacustomer.org     |
+	
+	
 #### 4. SELECT WHERE
 * Situation
   - **A customer wants to know what the movie “Outlaw Hanky” is about.**
@@ -215,6 +244,11 @@ FROM film
 WHERE title = 'Outlaw Hanky'
 ```
 
+|					description 					       |
+| -------------------------------------------------------------------------------------------- |
+| A Thoughtful Story of a Astronaut And a Composer who must Conquer a Dog in The Sahara Desert |
+	
+
 #### 5. SELECT WHERE
 * Situation
   - **A customer is late on their movie return, and we’ve mailed them a letter to their address at ‘259 Ipoh Drive’. We should also call them on the phone to let them know.**
@@ -226,6 +260,11 @@ WHERE title = 'Outlaw Hanky'
 SELECT phone FROM address
 WHERE address = '259 Ipoh Drive'
 ```
+
+|     phone     |
+| -------------	|
+| 419009857119  |
+
 
 #### 6. ORDER BY and LIMIT
 * Situation
@@ -241,6 +280,21 @@ ORDER BY payment_date ASC
 LIMIT 10
 ```
 
+| customer_id |
+| ----------- |
+|	416   |
+|516|
+|239|
+|592|
+|49|
+|264|
+|46|
+|481|
+|139|
+|595|
+	
+
+	
 #### 7. ORDER BY and LIMIT
 * Situation
   - **A customer wants to quickly rent a video to watch over their short lunch break.**
@@ -255,6 +309,15 @@ ORDER BY length ASC
 LIMIT 5
 ```
 
+| title | length |
+| --------| ---------|
+|Labyrinth League|	46|
+|Alien Center|	46|
+|Iron Moon|	46|
+|Kwai Homeward|	46|
+|Ridgemont Submarine|	46|
+	
+	
 #### 8. SELECT COUNT
 * Situation
   - **If the previous customer can watch any movie that is 50 minutes or less in run time, how many options does she have?**
@@ -268,6 +331,11 @@ FROM film
 WHERE length <= 50
 ```
 
+| count|
+|-------|
+|  37   |
+		 
+		 
 #### 9. HAVING
 * Challenge
    - **Return the customer IDs of customers who have spent at least $110 with the staff member who has an ID of 2.**
@@ -281,6 +349,12 @@ GROUP BY customer_id
 HAVING SUM(amount) >110;
 ```
 
+| customer_id | SUM |
+| ----------- |-----|
+|187|	110.81|
+|148|	110.78|
+	
+	
 #### 10. LIKE and ILIKE
 * Challenge
    - **How many films begin with the letter J?**
@@ -292,6 +366,11 @@ FROM film
 WHERE title  LIKE'J%';
 ```
 
+| count |
+| ----- |
+| 20	|
+	
+	
 #### 11. LIKE and ILIKE
 * Challenge
    - **What customer has the highest customer ID number whose name starts with an 'E' and has an address ID lower than 500?**
@@ -305,6 +384,11 @@ ORDER BY customer_id DESC
 LIMIT 1;
 ```
 
+| first_name | last_name |	
+| ---------- | --------- |
+| Eddie	| Tomlin|
+					      
+					      
 #### 12. INNER JOIN
 * Situation
   - **California sales tax laws have changed and we need to alert our customers to this through email.**
@@ -318,6 +402,19 @@ FROM address
   INNER JOIN customer ON address.address_id = customer.address_id
 WHERE district = 'California';
 ```
+					      
+| district | email |
+| -------- | ----- |
+|California|	patricia.johnson@sakilacustomer.org|
+|California|	betty.white@sakilacustomer.org|
+|California|	alice.stewart@sakilacustomer.org|
+|California|	rosa.reynolds@sakilacustomer.org|
+|California|	renee.lane@sakilacustomer.org|
+|California|	kristin.johnston@sakilacustomer.org|
+|California|	cassandra.walters@sakilacustomer.org|
+|California|	jacob.lance@sakilacustomer.org|
+|California|	rene.mcalister@sakilacustomer.org|
+					      
 
 #### 13.  2 JOINs
 * Situation
@@ -334,6 +431,36 @@ FROM film_actor
 WHERE first_name ='Nick' AND last_name = 'Wahlberg';
 ```
 
+					      
+|title | first_name |last_name|
+| ------ | ------- | ---------|
+|Adaptation Holes		|Nick	|Wahlberg|
+|Apache Divine			|Nick	|Wahlberg|
+|Baby Hall			|Nick	|Wahlberg|
+|Bull Shawshank			|Nick	|Wahlberg|
+|Chainsaw Uptown		|Nick	|Wahlberg|
+|Chisum Behavior		|Nick	|Wahlberg|
+|Destiny Saturday		|Nick	|Wahlberg|
+|Dracula Crystal		|Nick	|Wahlberg|
+|Fight Jawbreaker		|Nick	|Wahlberg|
+|Flash Wars			|Nick	|Wahlberg|
+|Gilbert Pelican		|Nick	|Wahlberg|
+|Goodfellas Salute		|Nick	|Wahlberg|
+|Happiness United		|Nick	|Wahlberg|
+|Indian Love			|Nick	|Wahlberg|
+|Jekyll Frogmen			|Nick	|Wahlberg|
+|Jersey Sassy			|Nick	|Wahlberg|
+|Liaisons Sweet			|Nick	|Wahlberg|
+|Lucky Flying			|Nick	|Wahlberg|
+|Maguire Apache			|Nick	|Wahlberg|
+|Mallrats United		|Nick	|Wahlberg|
+|Mask Peach			|Nick	|Wahlberg|
+|Roof Champion			|Nick	|Wahlberg|
+|Rushmore Mermaid		|Nick	|Wahlberg|
+|Smile Earring			|Nick	|Wahlberg|
+|Wardrobe Phantom		|Nick	|Wahlberg|
+					      
+					      
 #### 14. Timestamps and Extract 
 * Situation
   - **During which months did payments occur?**
@@ -347,6 +474,14 @@ SELECT
 FROM payment;
 ```
 
+| to_char|
+| ------- |
+| MARCH   | 
+| MAY      |
+| FEBRUARY |
+| APRIL    |
+					      
+					      
 #### 15. Timestamps and Extract 
 * Situation
   - **How many payments occurred on a Monday?**
@@ -361,6 +496,11 @@ FROM payment
 	WHERE EXTRACT(dow FROM payment_date) = 1
 ```
 
+| Count | 
+| ------|
+|2948|
+					      
+					      
 ### ✨ Contribution
 
 Contributions, issues, and feature requests are welcome!
